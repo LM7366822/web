@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			header div {
+				height: 100px;
+				background-color: yellowgreen;
+				margin: 20px;
+				width: 450px;
+				line-height: 50px;
+				font-size: 30px;
+				text-align: center;
+				letter-spacing: 1em;
+			}
+
+			main {
+				background: orangered;
+				font-size: 22px;
+				width: 450px;
+				margin: 20px;
+				text-align: center;
+			}
+
+			[type="button"] {
+				margin-left: 20px;
+				font-size: 18px;
+			}
+
+			input:checked {
+				width: 15px;
+				height: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div>
+				购物车
+			</div>
+		</header>
+		<main>
+			<input type="checkbox" />苹果
+			<input type="checkbox" />香蕉
+			<input type="checkbox" />梨子
+			<input type="checkbox" />草莓
+			<input type="checkbox" />西瓜
+			<input type="checkbox" />菠萝
+		</main>
+		<input type="button" value="全选" id="chose-all" />
+		<input type="button" value="清空" id="clear-all" />
+		<input type="button" value="反选" id="flip-all" />
+		<p>自动使用优惠券</p>
+		<input type="radio" name="coupon" />同意
+		<input type="radio" name="coupon" />不同意
+		<script type="text/javascript">
+			var oMain = document.getElementsByTagName('main')[0]
+			var aCheckBox = oMain.getElementsByTagName('input')
+			var oBtn1 = document.getElementById("chose-all")
+			var oBtn2 = document.getElementById("clear-all")
+			var oBtn3 = document.getElementById("flip-all")
+			oBtn1.onclick = function() {
+				for (var i = 0; i < aCheckBox.length; i++) {
+					aCheckBox[i].checked = true
+				}
+			}
+			oBtn2.onclick = function() {
+				for (var i = 0; i < aCheckBox.length; i++) {
+					aCheckBox[i].checked = false
+				}
+			}
+			oBtn3.onclick = function() {
+				for (var i = 0; i < aCheckBox.length; i++) {
+					if (aCheckBox[i].checked == false) {
+						aCheckBox[i].checked = true
+					} else {
+						aCheckBox[i].checked = false
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
