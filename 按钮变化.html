@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			span {
+				background-color:lightblue;
+				font-size: 10px;
+				margin: 8px;
+				padding: 8px;
+				cursor: pointer;
+				/* border-radius: 20px; */
+			}
+
+			.on {
+				color: red;
+				border-bottom: 4px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<span class="">日榜</span>
+		<span class="">周榜</span>
+		<span class="">月榜</span>
+		<span class="">季榜</span>
+		<span class="">年榜</span>
+		<script type="text/javascript">
+			var aBtn = document.getElementsByTagName("span")
+			for (var i = 0; i < aBtn.length; i++) {
+				aBtn[i].onmouseover = function() {
+				for (var i = 0; i < aBtn.length; i++) {
+					aBtn[i].className = ''
+				}
+				this.className = 'on'
+			}
+		}
+		</script>
+	</body>
+</html>
